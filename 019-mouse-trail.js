@@ -31,8 +31,18 @@ const sketch = ({ canvas, width, height }) => {
     
     // Disegna un cerchio nella posizione del mouse
     context.beginPath();
-    context.arc(mouse.x, mouse.y, 20, 0, Math.PI * 2);
-    context.fillStyle = 'blue';
+    context.fillStyle = 'rgb('+ mouse.x +','+ mouse.y/2 +', 100)';
+    context.fillText("EL", mouse.x, mouse.y);
+    let fontSize = 1000;
+    let fontFamily = "verdana";
+
+    context.font = fontSize + "px " + fontFamily;
+    context.textBaseline = "bottom";
+    context.textAlign = "center";
+
+
+   // context.arc(mouse.x, mouse.y, mouse.y/10, 0, Math.PI * 2);
+    //context.fillStyle = 'rgb('+ mouse.x +','+ mouse.y/2 +', 100)';
     context.fill();
     context.closePath();
   };
